@@ -18,7 +18,7 @@ where a.itemid=b.itemid and b.templateid = 23684 and b.hostid = c.HOSTID
 (
 select b.hostid, a.clock, a.value_min, a.value_avg, a.value_max
 from trends_uint a, items b, hosts c
-where a.itemid=b.itemid and b.templateid = 23671 and b.hostid = c.HOSTID and a.VALUE_MIN=6
+where a.itemid=b.itemid and b.templateid = 23671 and b.hostid = c.HOSTID and a.VALUE_MIN=6 and c.name like 'fgprd%'
 ) z
 Where x.hostid=y.hostid and x.clock=y.clock and y.hostid=z.hostid and y.clock=z.clock
 group by to_date ('1970-01-01' , 'YYYY-MM-DD') + numtodsinterval (x.clock,'SECOND')
